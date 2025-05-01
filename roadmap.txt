@@ -1,0 +1,73 @@
+► Step 1: DSA Foundations (Months 1–4) 
+- Focus on core patterns: Arrays, Linked Lists, Trees, Graphs, DP 
+- Use curated lists (200–250 questions across topics) 
+- Learn Pattern-Based
+- Weekly contests on LeetCode
+- Build a revision sheet: your own distilled learnings, not just solutions 
+- Target: 1.5-2 focused hrs daily with consistent tracking
+
+Also, if you need help getting prepared for all the above things, like DSA, Development,and System Design under one guide, I’ve come out with amazing resource for you: https://bit.ly/3EISvLj
+
+
+► Step 2: Frontend Development (Months 5–6)
+
+Core Skills: 
+— HTML + CSS (Responsive Layouts, Flex, Grid) 
+— JavaScript (Closures, Async/Await, Event Loop) 
+— Modern JS (ES6+, Promises, Fetch API, Modules)
+
+React (or Vue/Angular): 
+— Hooks, Routing, Context API 
+— Component structure & state management 
+— Real-world project structure
+
+Advanced Layer: 
+— Build tools (Vite/Webpack) 
+— Unit testing (Jest/RTL) 
+— Performance profiling + Lighthouse 
+— Machine Coding Rounds (low-level DOM manipulation, sorting tables, building modals, etc.)
+
+
+► Step 3: Backend Development in Java (Months 7–8)
+
+Don’t just learn Spring Boot. 
+Understand how things work.
+
+Java Fundamentals: 
+— Core Java, OOP, Collections, Exception Handling 
+— Multithreading + JVM basics 
+— Writing clean, testable code
+
+Spring Boot Ecosystem: 
+— REST APIs, Controllers, Services, Repositories 
+— Spring Security (JWT, OAuth2) 
+— JPA + Hibernate for DB integration 
+— Exception Handling, Validation, Pagination
+
+Dev Ready Add-ons: 
+— Swagger docs 
+— Docker basics 
+— CI/CD pipelines (GitHub Actions / Jenkins) 
+— JUnit & Integration Testing 
+— Real-world machine coding: Authentication flows, file uploads, CRUD APIs
+
+
+► Step 4: Combine & Build Full-Stack Projects (Month 8–9) 
+- Pick 2–3 strong ideas (e.g. job board, project tracker, internal dashboard) 
+- Frontend: React UI with routes, auth, dynamic states 
+- Backend: Secure APIs, integrated with the frontend 
+- Use PostgreSQL / MySQL, and deploy to Render / Vercel / Railway 
+- Show off with a clean GitHub + README + LinkedIn post
+
+
+► Step 5: LLD + System Design (parallel during Month 7–8) 
+- Learn how to structure services, API contracts, DB schema 
+- Start with Low-Level Design: Rate limiter, BookMyShow, Splitwise 
+- HLD basics: Caching, Load Balancing, DB scaling (read-replicas)
+
+
+► Step 6: Resume, Outreach & Interviews (Month 9 onwards) 
+- Resume: Highlight projects + role-specific impact 
+- Cold outreach: 40-50 targeted messages/week 
+- Practice mock interviews weekly 
+- Keep applying consistently, don’t rely on one channel
