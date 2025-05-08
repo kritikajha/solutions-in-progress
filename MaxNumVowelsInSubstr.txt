@@ -1,0 +1,68 @@
+1456. Maximum Number of Vowels in a Substring of Given Length
+
+Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
+Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
+
+
+Example 1:
+
+Input: s = "abciiidef", k = 3
+Output: 3
+Explanation: The substring "iii" contains 3 vowel letters.
+Example 2:
+
+Input: s = "aeiou", k = 2
+Output: 2
+Explanation: Any substring of length 2 contains 2 vowels.
+Example 3:
+
+Input: s = "leetcode", k = 3
+Output: 2
+Explanation: "lee", "eet" and "ode" contain 2 vowels.
+
+
+
+*********Solution:
+
+If we clearly look for the diff in every substring of size k..
+
+0  1  2  3  
+a  b  c  i  i  i  d  e  f
+-------
+   -------
+
+when the next substring[1,3] is being evaluated 
+then the first character of the last substring[0,2] is removed & last character of current substring [1,3] is added.
+
+thus, to find the answer for next substring[i-k+1, i], the only effort is
+		--> delete one character -> if the last character was a vowel ('a') then subtract 1 from currVowel.
+		--> add one character -> if teh new character is a vowel ('i') then add 1 to currVowel.
+
+Lets try to visualize how str is changing, currSubstring a,b,c; next substr b,c,i. 
+Next substr means i erased 'a' and added an 'i'. This is sliding window approach(in the same substr).
+
+
+//Code
+class Solution {
+    public int maxVowels(String s, int k) {
+
+        int maxCount = 0, currCount =0;
+        
+        for(int i=0;i<s.length();i++){
+            currCount += isVowel(s.charAt(i));
+
+            if(i>=k){
+                currCount -= isVowel(s.charAt(i - k));//the vowel we removed
+            }
+            maxCount = Math.max(maxCount,currCount);
+        }
+        return maxCount;
+    }
+    
+    public int isVowel(char c){
+        if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
+            return 1;
+        }
+        return 0;
+    }
+}
