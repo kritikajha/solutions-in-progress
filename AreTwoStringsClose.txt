@@ -1,0 +1,84 @@
+1657. Determine if Two Strings Are Close
+
+Two strings are considered close if you can attain one from the other using the following operations:
+
+Operation 1: Swap any two existing characters.
+For example, abcde -> aecdb
+Operation 2: Transform every occurrence of one existing character into another existing character, and do the same with the other character.
+For example, aacabb -> bbcbaa (all a's turn into b's, and all b's turn into a's)
+You can use the operations on either string as many times as necessary.
+
+Given two strings, word1 and word2, return true if word1 and word2 are close, and false otherwise.
+
+Solution::
+
+Two strings are considered close if:
+You can swap any two characters (i.e., they are anagrams).
+
+You can transform every occurrence of one character into another character, and vice versa (basically, character frequency swapping is allowed).
+
+✅ Conditions for strings to be close:
+They must have the same set of characters.
+
+They must have the same frequency count set (regardless of which character has which frequency).
+
+import java.util.*;
+
+public class Solution {
+    public boolean closeStrings(String word1, String word2) {
+        if (word1.length() != word2.length()) return false;
+
+        // Frequency maps for both words
+        int[] freq1 = new int[26];
+        int[] freq2 = new int[26];
+
+        for (char c : word1.toCharArray()) freq1[c - 'a']++;
+        for (char c : word2.toCharArray()) freq2[c - 'a']++;
+
+        // Check if both strings have the same characters
+        for (int i = 0; i < 26; i++) {
+            if ((freq1[i] == 0 && freq2[i] != 0) || (freq1[i] != 0 && freq2[i] == 0)) {
+                return false;
+            }
+        }
+
+        // Check if the multisets of frequencies are the same
+        Arrays.sort(freq1);
+        Arrays.sort(freq2);
+
+        return Arrays.equals(freq1, freq2);
+    }
+}
+
+
+
+✅ Example:
+
+word1 = "abc", word2 = "bca"
+=> true (can be rearranged)
+
+word1 = "aabbcc", word2 = "ccbbaa"
+=> true (same frequencies)
+
+word1 = "a", word2 = "aa"
+=> false (different lengths and frequency sets)
+
+
+****************************
+freq1[c - 'a']++
+This is the key line. It:
+
+Calculates the index in the array corresponding to the character.
+
+Increments the count at that index.
+
+💡 How does c - 'a' work?
+In Java, characters are really small integers under the hood (Unicode values).
+
+'a' is 97, 'b' is 98, ..., 'z' is 122.
+
+So 'b' - 'a' = 98 - 97 = 1, so freq1[1]++ increments the count for 'b'.
+
+So this line is saying:
+
+"For every character in the string, increment its corresponding slot in the freq1 array."
